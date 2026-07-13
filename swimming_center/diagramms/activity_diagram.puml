@@ -1,0 +1,16 @@
+@startuml
+start
+:Client approaches Automatic;
+:Choose desired area;
+:Insert money;
+if (Money >= price?) then (yes)
+    :Create Ticket in TicketSystem;
+    :Assign ticket number to Client;
+    :Print or issue ticket;
+    :Client enters permitted area;
+else (no)
+    :Show message: Please insert more money;
+    :Cancel transaction;
+endif
+stop
+@enduml

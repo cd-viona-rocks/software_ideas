@@ -1,0 +1,14 @@
+@startuml
+actor Client
+participant Automatic
+participant TicketSystem
+participant Employee
+
+Client -> Automatic: choose area and insert money
+Automatic -> TicketSystem: create_ticket()
+TicketSystem --> Automatic: returns ticket number
+Automatic --> Client: issue ticket
+Client -> Employee: enter swimming center
+Employee -> Client: verify ticket / grant access
+Employee --> Client: if not allowed, request to leave
+@enduml

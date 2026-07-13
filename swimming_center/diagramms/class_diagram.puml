@@ -1,0 +1,82 @@
+@startuml
+'left to right direction
+skinparam classAttributeIconSize 0
+'hide circle
+
+enum Areas {
+    Entrance
+    Child
+    Swimming
+    Sauna
+}
+
+class Area {
+    -name: Areas
+}
+
+class SwimmingCenter {
+    -name: String
+    -description: String
+    -address: String
+    -opening_hours: String
+    -areas: List<Area>
+}
+
+class TicketSystem {
+    -number: Integer
+    -client_number: Integer
+    -created_at: Integer
+    -checkin_at: Integer
+    -checkout_at: Integer
+    -permitted_areas: List<String>
+}
+
+
+class Client {
+    -number: Integer
+    -ticket_number: Integer
+}
+
+' Subscription extends Client
+' see inheritance under the class diagram. no keyword "extends" here.
+class Subscription {
+    -begin_subscription: Integer
+    -end_subscription: Integer
+}
+
+' Casual extends Client
+' see inheritance under the class diagram. no keyword "extends" here.
+class Casual  {
+}
+
+
+class Automatic {
+    -number: Integer
+    -buy_options: Areas
+    +create_ticket() : Ticket
+    +sell(option, money) : None
+}
+
+
+class Employee {
+    -name: String
+    -number: Integer
+    -working_turn: String
+    +lifeguard_blew_the_whistle() : String
+    +lifeguard_invites_you_to_go_out() : String
+}
+
+
+SwimmingCenter "1" *-left- "4" Area
+SwimmingCenter "1" *-- "1" TicketSystem
+TicketSystem "1" --> "0..*" Client : registers
+
+Client <|-down- Subscription
+Client <|-down- Casual
+
+Automatic -left-> TicketSystem : creates ticket
+Automatic --> Client : assigns ticket
+Employee -right-> Client : monitors access
+Area -up-> Areas
+
+@enduml
