@@ -1,8 +1,10 @@
-# tickets by ticket number
+# log tickets by ticket number
 TICKETS = dict()
 
-# clients by client number
+# register clients by client number
 CLIENTS = dict()
+LOG_CLIENTS = []
 
-# employees by employee number
+# register employees by employee number
 EMPLOYEES = dict()
+LOG_EMPLOYEES = []

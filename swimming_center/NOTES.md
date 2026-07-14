@@ -3,10 +3,12 @@
 this file is only for intern use.  
 the file README should be created by AI-Assistant from VSCode.  
 
-## Intro / Requirements
+## Intro / Requirements / References
 
 Coding language is english  
 Programmign language is python3  
+
+https://www.mockaroo.com/  
 
 ## logical professional optimal sequence
 
@@ -40,12 +42,9 @@ Programmign language is python3
 
 ## Organisation
 
-### Data from mockarro
-
-https://www.mockaroo.com/
+### Client data from mockarro
 
 age:  
-
 n = random(1,100)  
 if n < 25 then random(1,10)  
 elsif n < 35 then random(10,18)  
@@ -55,8 +54,25 @@ elsif n < 98 then random(65,85)
 else random(85,100) end  
 
 subscription:  
-
 if random(1,100) < 20 then 1 else 0 end  
+
+### Employees data from Mockarro
+
+gender:  
+if random(1,10) < 7 then "Male" else "Female" end  
+
+age:  
+n = random(1,100)  
+if n < 15 then random(15,21)  
+elsif n < 85 then random(21,55)  
+else random(55,65) end  
+
+position:  
+if field('age') <= 21 and random(1,10) < 8 then "Azubi"  
+elsif random(1,10) < 2 then "Pool Master"  
+else "Employee" end  
+
+
 
 
 ### Classes

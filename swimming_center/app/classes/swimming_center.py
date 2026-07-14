@@ -1,5 +1,6 @@
-from app.classes.swimming_areas import Area
-from app.classes.automatics import Automatic
+
+from swimming_center.app.data.config import Areas
+from .automatics import Automatic
 
 class SwimmingCenter:
     def __init__(self, **kwargs):

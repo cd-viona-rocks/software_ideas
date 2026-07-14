@@ -1,12 +1,9 @@
-from enum import Enum
+import sys
+import os
 
-class Areas(Enum):
-    """pair: name = value; from Type ENUM for permitted swimming areas."""
-
-    ENTRANCE = (0, "Entrance area, bistro, tickets, info point.")
-    CHILD = (1, "A safe area for children to play.")
-    SWIMMING = (2, "The main swimming area with different lanes.")
-    SAUNA = (3, "A relaxing sauna area.")
+# Add the sibling folder's path to sys.path
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'data')))
+from config import Areas
 
 class Area:
     """Represents one swimming-area definition for the swimming center.

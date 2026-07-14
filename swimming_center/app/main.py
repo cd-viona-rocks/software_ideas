@@ -1,4 +1,4 @@
-from app.runnables.create_building import create_swimming_center
+from .runnables.create_building import create_swimming_center
 
 class App:
 
